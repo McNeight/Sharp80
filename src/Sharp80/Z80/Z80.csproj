@@ -7,8 +7,8 @@
     <ProjectGuid>{45DD5077-8016-44C7-9010-48F9FE10F6A6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Z80</RootNamespace>
-    <AssemblyName>Z80</AssemblyName>
+    <RootNamespace>Sharp80.Z80</RootNamespace>
+    <AssemblyName>Sharp80.Z80</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

@@ -70,15 +70,15 @@
     <Compile Include="Z80.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Sharp80\Sharp80.csproj">
+    <ProjectReference Include="..\..\src\Sharp80\Sharp80.csproj">
       <Project>{826ece28-4d67-42f8-a04f-7036263210ce}</Project>
       <Name>Sharp80</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TRS80\TRS80.csproj">
+    <ProjectReference Include="..\..\src\Sharp80\TRS80\TRS80.csproj">
       <Project>{d8464fbd-127f-4b63-9906-680883edea76}</Project>
       <Name>TRS80</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Z80\Z80.csproj">
+    <ProjectReference Include="..\..\src\Sharp80\Z80\Z80.csproj">
       <Project>{45dd5077-8016-44c7-9010-48f9fe10f6a6}</Project>
       <Name>Z80</Name>
     </ProjectReference>

@@ -3,19 +3,26 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharp80", "Sharp80\Sharp80.csproj", "{826ECE28-4D67-42F8-A04F-7036263210CE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharp80", "src\Sharp80\Sharp80.csproj", "{826ECE28-4D67-42F8-A04F-7036263210CE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A4A52541-2A2B-4B05-ABCB-61FDEDBDAB09}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		license.txt = license.txt
+		README.md = README.md
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharp80Tests", "Sharp80Tests\Sharp80Tests.csproj", "{B3F5203C-889C-4973-B276-361953E1D25A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharp80.Tests", "tests\Sharp80.Tests\Sharp80.Tests.csproj", "{B3F5203C-889C-4973-B276-361953E1D25A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Z80", "Z80\Z80.csproj", "{45DD5077-8016-44C7-9010-48F9FE10F6A6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Z80", "src\Sharp80\Z80\Z80.csproj", "{45DD5077-8016-44C7-9010-48F9FE10F6A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRS80", "TRS80\TRS80.csproj", "{D8464FBD-127F-4B63-9906-680883EDEA76}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRS80", "src\Sharp80\TRS80\TRS80.csproj", "{D8464FBD-127F-4B63-9906-680883EDEA76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Views", "Views\Views.csproj", "{1C6945BC-4016-449F-9732-B416443F307D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Views", "src\Sharp80\Views\Views.csproj", "{1C6945BC-4016-449F-9732-B416443F307D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectX", "DirectX\DirectX.csproj", "{261120B2-49EA-47A0-B9CE-02D90DB91165}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectX", "src\Sharp80\DirectX\DirectX.csproj", "{261120B2-49EA-47A0-B9CE-02D90DB91165}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,5 +57,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4EC2DA18-B54B-4D7F-9349-04AD90C3D264}
 	EndGlobalSection
 EndGlobal
