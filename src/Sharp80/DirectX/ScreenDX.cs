@@ -114,7 +114,7 @@ namespace Sharp80.DirectX
             set { isKanjiCharMode = value; erase = true; Invalidate(); }
         }
         /// <summary>
-        /// Prepend message with '&' for permanent message
+        /// Prepend message with '&amp;' for permanent message
         /// </summary>
         public string StatusMessage
         {
