@@ -1,0 +1,6 @@
+<Project>
+  <PropertyGroup>
+    <Deterministic>true</Deterministic>
+    <BaseIntermediateOutputPath>..\..\..\artifacts\obj\Sharp80.Z80\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+</Project>

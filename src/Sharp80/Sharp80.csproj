@@ -1,63 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.50727</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{826ECE28-4D67-42F8-A04F-7036263210CE}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <TargetFrameworks>
+      <!-- .NET Framework -->
+      net45;net451;net452;
+      net46;net461;net462;
+      net47;net471;net472;
+    </TargetFrameworks>
+    <SignAssembly>False</SignAssembly>
+    <AutoGenerateBindingRedirects>True</AutoGenerateBindingRedirects>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <BaseOutputPath>..\..\artifacts\bin\</BaseOutputPath>
+    <BaseIntermediateOutputPath>..\..\artifacts\obj\Sharp80\</BaseIntermediateOutputPath>
     <RootNamespace>Sharp80</RootNamespace>
     <AssemblyName>Sharp80</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
-    <OldToolsVersion>2.0</OldToolsVersion>
-    <TargetFrameworkProfile>
-    </TargetFrameworkProfile>
-    <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>http://www.sharp80.com/sharp80/</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Web</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
-    <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <UseApplicationTrust>false</UseApplicationTrust>
-    <PublishWizardCompleted>true</PublishWizardCompleted>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+
+  <!-- Nuget specific tags -->
+  <PropertyGroup>
+    <AssemblyVersion>1.1.0.99</AssemblyVersion>
+    <FileVersion>1.1.0.99</FileVersion>
+    <Version>1.1.0.99</Version>
+    <PackageId>Sharp 80</PackageId>
+    <Company>Matthew Hamilton</Company>
+    <Authors>Matthew Hamilton</Authors>
+    <Description>TRS-80 Model III Emulator</Description>
+    <PackageLicenseUrl>https://github.com/mch2112/Sharp80/blob/master/license.txt</PackageLicenseUrl>
+    <PackageProjectUrl>http://www.sharp80.com/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/mch2112/Sharp80</RepositoryUrl>
+    <Copyright>Copyright © 2017-2018 Matthew Hamilton</Copyright>
+    <PackageTags></PackageTags>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <PackageReleaseNotes></PackageReleaseNotes>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <UseVSHostingProcess>true</UseVSHostingProcess>
-    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>..\..\artifacts\bin\$(Configuration)\$(TargetFramework)\Sharp80.xml</DocumentationFile>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>..\..\artifacts\bin\$(Configuration)\$(TargetFramework)\Sharp80.xml</DocumentationFile>
   </PropertyGroup>
+
   <PropertyGroup>
     <ManifestCertificateThumbprint>BFD5F62D0CCF1264769A9BC076FA30C8688F813B</ManifestCertificateThumbprint>
   </PropertyGroup>
@@ -73,117 +60,89 @@
   <PropertyGroup>
     <ApplicationIcon>main.ico</ApplicationIcon>
   </PropertyGroup>
+  
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
-    <Reference Include="System.ValueTuple, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
+    <Compile Remove="DirectX\**" />
+    <Compile Remove="TRS80\**" />
+    <Compile Remove="Views\**" />
+    <Compile Remove="Z80\**" />
+    <EmbeddedResource Remove="DirectX\**" />
+    <EmbeddedResource Remove="TRS80\**" />
+    <EmbeddedResource Remove="Views\**" />
+    <EmbeddedResource Remove="Z80\**" />
+    <None Remove="DirectX\**" />
+    <None Remove="TRS80\**" />
+    <None Remove="Views\**" />
+    <None Remove="Z80\**" />
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MessageEventArgs.cs" />
-    <Compile Include="NativeMethods.cs" />
-    <Compile Include="ProductInfo.cs" />
-    <Compile Include="Settings.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Timer.cs" />
-    <Compile Include="WinDialogs.cs" />
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="app.config" />
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <Compile Include="Properties.Settings.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
-      <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
-      <Visible>False</Visible>
-      <ProductName>Windows Installer 4.5</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-  </ItemGroup>
+
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
+  
   <ItemGroup>
     <Content Include="main.ico" />
   </ItemGroup>
+  
   <ItemGroup>
-    <ProjectReference Include="..\DirectX\DirectX.csproj">
+    <PackageReference Include="SharpDX.Desktop">
+      <Version>4.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="SharpDX.Direct2D1">
+      <Version>4.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="SharpDX.Direct3D10">
+      <Version>4.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="SharpDX.DirectInput">
+      <Version>4.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="SharpDX.DirectSound">
+      <Version>4.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="SharpDX.Mathematics">
+      <Version>4.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="SharpDX.XAudio2">
+      <Version>4.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.ValueTuple">
+      <Version>4.5.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="DirectX\DirectX.csproj">
       <Project>{261120b2-49ea-47a0-b9ce-02d90db91165}</Project>
       <Name>DirectX</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TRS80\TRS80.csproj">
+    <ProjectReference Include="TRS80\TRS80.csproj">
       <Project>{d8464fbd-127f-4b63-9906-680883edea76}</Project>
       <Name>TRS80</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Views\Views.csproj">
+    <ProjectReference Include="Views\Views.csproj">
       <Project>{1c6945bc-4016-449f-9732-b416443f307d}</Project>
       <Name>Views</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Z80\Z80.csproj">
+    <ProjectReference Include="Z80\Z80.csproj">
       <Project>{45dd5077-8016-44c7-9010-48f9fe10f6a6}</Project>
       <Name>Z80</Name>
     </ProjectReference>
   </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+
   <PropertyGroup>
     <PostBuildEvent>
     </PostBuildEvent>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Sharp80.Program</StartupObject>
+    <PackageIconUrl>https://raw.githubusercontent.com/mch2112/Sharp80/master/Sharp80/main.ico</PackageIconUrl>
   </PropertyGroup>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+
 </Project>
